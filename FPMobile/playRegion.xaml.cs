@@ -12,6 +12,8 @@ namespace FPMobile
 {
     public partial class playRegion : PhoneApplicationPage
     {
+        public string name;
+        public int lastLevel;
         public playRegion()
         {
             InitializeComponent();
@@ -65,14 +67,16 @@ namespace FPMobile
         {
             int levels = Convert.ToInt32(NavigationContext.QueryString["level"].ToString());
             AddRegion(levels);
+            name = NavigationContext.QueryString["name"].ToString();
+            lastLevel = Convert.ToInt32(NavigationContext.QueryString["lastLevel"].ToString());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(myLst.SelectedItem.ToString());
+            //MessageBox.Show(myLst.SelectedItem.ToString());
             if (myLst.SelectedItem.ToString() == "D.I. Aceh")
             {
-                NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml", UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
             else
             {

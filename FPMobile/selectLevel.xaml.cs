@@ -12,6 +12,8 @@ namespace FPMobile
 {
     public partial class selectLevel : PhoneApplicationPage
     {
+        public string name;
+        public int lastLevel;
         int selectedLevel;
 
         public selectLevel()
@@ -21,7 +23,7 @@ namespace FPMobile
 
         private void Navigate()
         {
-            NavigationService.Navigate(new Uri("/playRegion.xaml?level=" + selectedLevel, UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/playRegion.xaml?level=" + selectedLevel + "&name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,6 +60,42 @@ namespace FPMobile
         {
             selectedLevel = 6;
             Navigate();
+        }
+
+        private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            name = NavigationContext.QueryString["name"].ToString();
+            lastLevel = Convert.ToInt32(NavigationContext.QueryString["lastLevel"].ToString());
+            if(lastLevel == 2)
+            {
+                btnLvl2.IsEnabled = true;
+            }
+            else if(lastLevel == 3)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+            }
+            else if (lastLevel == 4)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+                btnLvl4.IsEnabled = true;
+            }
+            else if (lastLevel == 5)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+                btnLvl4.IsEnabled = true;
+                btnLvl5.IsEnabled = true;
+            }
+            else if (lastLevel == 6)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+                btnLvl4.IsEnabled = true;
+                btnLvl5.IsEnabled = true;
+                btnLvl6.IsEnabled = true;
+            }
         }
     }
 }

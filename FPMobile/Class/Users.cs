@@ -14,11 +14,26 @@ namespace FPMobile.Class
         [Column(IsPrimaryKey=true, IsDbGenerated=true,DbType= "INT NOT NULL Identity")]
         public int IdUser { set; get; }
 
-        [Column]
+        [Column(CanBeNull=false)]
         public string Name { set; get; }
 
         [Column]
+        public int LastLevel { set; get; }
+
+        [Column]
         public int Score { set; get; }
+
+        [Column]
+        public bool RegionAceh { set; get; }
+
+        [Column]
+        public bool RegionSumut { set; get; }
+
+        [Column]
+        public bool RegionRiau { set; get; }
+
+        [Column]
+        public bool RegionSumsel { set; get; }
     }
 
     public class UsersContext : DataContext

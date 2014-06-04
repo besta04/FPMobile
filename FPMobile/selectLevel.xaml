@@ -11,7 +11,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -28,12 +28,12 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button Content="Level 1" Margin="0,45,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click"/>
-            <Button Content="Level 2" Margin="0,127,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_1"/>
-            <Button Content="Level 3" Margin="0,209,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_2"/>
-            <Button Content="Level 4" Margin="0,291,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_3"/>
-            <Button Content="Level 5" Margin="0,373,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_4"/>
-            <Button Content="Level 6" Margin="0,455,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_5"/>
+            <Button x:Name="btnLvl1" Content="Level 1" Margin="0,45,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click"/>
+            <Button x:Name="btnLvl2" Content="Level 2" Margin="0,127,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_1" IsEnabled="False"/>
+            <Button x:Name="btnLvl3" Content="Level 3" Margin="0,209,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_2" IsEnabled="False"/>
+            <Button x:Name="btnLvl4" Content="Level 4" Margin="0,291,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_3" IsEnabled="False"/>
+            <Button x:Name="btnLvl5" Content="Level 5" Margin="0,373,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_4" IsEnabled="False"/>
+            <Button x:Name="btnLvl6" Content="Level 6" Margin="0,455,0,0" VerticalAlignment="Top" Height="82" Click="Button_Click_5" IsEnabled="False"/>
 
         </Grid>
     </Grid>

@@ -11,7 +11,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -23,7 +23,7 @@
                     <ImageBrush Stretch="Fill" ImageSource="/Assets/Images/aceh.png"/>
                 </phone:PivotItem.Background>
                 <Grid Margin="2,0,-2,0">
-                    <Button Content="Jelajahi !" HorizontalAlignment="Left" Margin="289,644,0,0" VerticalAlignment="Top" Click="Button_Click_1" Background="#FFAD1515"/>
+                    <Button x:Name="btnGO" Content="Jelajahi !" HorizontalAlignment="Left" Margin="289,644,0,0" VerticalAlignment="Top" Click="Button_Click_1" Background="#FFAD1515" IsEnabled="False"/>
                 </Grid>
             </phone:PivotItem>
 
@@ -33,17 +33,22 @@
                     <ImageBrush Stretch="Fill" ImageSource="/Assets/Images/soal1.png"/>
                 </phone:PivotItem.Background>
                 <Grid>
-                    <Button x:Name="btnA" Content="19 ayat 1" HorizontalAlignment="Left" Margin="62,518,0,0" VerticalAlignment="Top" Background="#FFAD1515"/>
-                    <Button x:Name="btnB" Content="25 ayat 2" HorizontalAlignment="Left" Margin="271,608,0,0" VerticalAlignment="Top" Background="#FFAD1515"/>
-                    <Button x:Name="btnC" Content="31 ayat 2" HorizontalAlignment="Left" Margin="274,518,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="Button_Click"/>
-                    <Button x:Name="btnD" Content="31 ayat 1" HorizontalAlignment="Left" Margin="62,608,0,0" VerticalAlignment="Top" Background="#FFAD1515"/>
+                    <Button x:Name="btnA" Content="19 ayat 1" HorizontalAlignment="Left" Margin="62,518,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnA_Click"/>
+                    <Button x:Name="btnB" Content="25 ayat 2" HorizontalAlignment="Left" Margin="271,608,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnB_Click"/>
+                    <Button x:Name="btnC" Content="31 ayat 2" HorizontalAlignment="Left" Margin="274,518,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="Button_Click" IsEnabled="False"/>
+                    <Button x:Name="btnD" Content="31 ayat 1" HorizontalAlignment="Left" Margin="62,608,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnD_Click"/>
                 </Grid>
             </phone:PivotItem>
 
-            <phone:PivotItem Header="">
+            <phone:PivotItem Header="" Margin="0,-42,0,0">
                 <Grid>
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="180,307,0,0" VerticalAlignment="Top"/>
-
+                    <Grid.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="/Assets/Images/soal2.png"/>
+                    </Grid.Background>
+                    <Button x:Name="btn2A" Content="22 ayat 1" HorizontalAlignment="Left" Margin="62,518,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2A_Click"/>
+                    <Button x:Name="btn2B" Content="pasal 35" HorizontalAlignment="Left" Margin="271,608,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2B_Click"/>
+                    <Button x:Name="btn2C" Content="pasal 19" HorizontalAlignment="Left" Margin="274,518,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="btn2C_Click" IsEnabled="False"/>
+                    <Button x:Name="btn2D" Content="pasal 33" HorizontalAlignment="Left" Margin="62,608,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2D_Click"/>
                 </Grid>
             </phone:PivotItem>
         </phone:Pivot>
