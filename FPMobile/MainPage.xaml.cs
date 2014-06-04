@@ -80,15 +80,22 @@ namespace FPMobile
         // Play
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            name = myLst.SelectedItem.ToString();
-            var temp = from all in db.user
-                       where all.Name == name
-                       select all.LastLevel;
-            foreach(var item in temp)
+            try
             {
-                lastLevel += item;
+                name = myLst.SelectedItem.ToString();
+                var temp = from all in db.user
+                           where all.Name == name
+                           select all.LastLevel;
+                foreach (var item in temp)
+                {
+                    lastLevel += item;
+                }
+                NavigationService.Navigate(new Uri("/selectLevel.xaml?name=" + name + "&lastLevel=" + lastLevel.ToString(), UriKind.RelativeOrAbsolute));
             }
-            NavigationService.Navigate(new Uri("/selectLevel.xaml?name=" + name + "&lastLevel=" + lastLevel.ToString(), UriKind.RelativeOrAbsolute));
+            catch
+            {
+
+            }
         }
 
         // Instruction

@@ -78,9 +78,29 @@ namespace FPMobile
             {
                 NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
-            else
+            else if (myLst.SelectedItem.ToString() == "Sumatera Utara")
             {
-
+                NavigationService.Navigate(new Uri("/GamePage/GamePageSumut.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Riau")
+            {
+                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Sumatera Selatan")
+            {
+                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "DKI Jakarta")
+            {
+                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Jawa Tengah")
+            {
+                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Jawa Timur")
+            {
+                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
         }
     }

@@ -24,59 +24,28 @@ namespace FPMobile
             InitializeComponent();
         }
 
-        private void Pivot_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        // trueAnswer - 1
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?PivotMain.SelectedIndex = 0", UriKind.Relative));
-            MyPivot.SelectedIndex = 2;
-            btnA.IsEnabled = false;
-            btnB.IsEnabled = false;
-            btnC.IsEnabled = false;
-            btnD.IsEnabled = false;
-
-            // jawab bener, skor + 100
-            localScore += 100;
-
-            var messagePrompt = new MessagePrompt
-            {
-                Title = "Correct",
-                Message = "You answered correctly"
-            };
-            messagePrompt.Show();
-
-            // go to next question
-            MyPivot.SelectedIndex = 2;
-        }
-
+        // go to first pivot when enter
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MyPivot.SelectedIndex = 1;
         }
 
+        // called when page loaded
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
             db = new UsersContext("isostore:/Users.sdf");
 
             bool regAceh = false;
-            //int test = 0;
             name = NavigationContext.QueryString["name"].ToString();
-            //MessageBox.Show(name);
             lastLevel = Convert.ToInt32(NavigationContext.QueryString["lastLevel"].ToString());
             var temp = from all in db.user
                        where all.Name == name
                        select all.RegionAceh;
-            foreach(var item in temp)
+            foreach (var item in temp)
             {
                 regAceh = item;
-                //test = item;
             }
-            //MessageBox.Show(regAceh.ToString());
-            if(lastLevel == 1 && regAceh != true)
+            if (lastLevel == 1 && regAceh != true)
             {
                 btnGO.IsEnabled = true;
                 btnA.IsEnabled = true;
@@ -90,8 +59,65 @@ namespace FPMobile
             }
         }
 
-        
-        // trueAnswer - 2
+        // kalo jawaban salah
+        private void WrongAnswer()
+        {
+            // jawab salah, skor - 50
+            localScore -= 50;
+
+            var messagePrompt = new MessagePrompt
+            {
+                Title = "Wrong Answer",
+                Message = "Sorry, your answer is wrong"
+            };
+            messagePrompt.Show();
+        }
+
+        // question 1 - wrong
+        private void btnA_Click(object sender, RoutedEventArgs e)
+        {
+            WrongAnswer();
+        }
+
+        // question 1 - wrong
+        private void btnB_Click(object sender, RoutedEventArgs e)
+        {
+            WrongAnswer();
+        }
+
+        // question 1 - true
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            btnA.IsEnabled = false;
+            btnB.IsEnabled = false;
+            btnC.IsEnabled = false;
+            btnD.IsEnabled = false;
+
+            // jawab bener, skor + 100
+            localScore += 100;
+
+            var messagePrompt = new MessagePrompt
+            {
+                Title = "Correct",
+                Message = "You answered correctly"
+            };
+            messagePrompt.Completed += messagePrompt_Completed2;
+            messagePrompt.Show();
+        }
+
+        // question 1 - wrong
+        private void btnD_Click(object sender, RoutedEventArgs e)
+        {
+            WrongAnswer();
+        }
+
+        // question 2 - wrong
+        private void btn2A_Click(object sender, RoutedEventArgs e)
+        {
+            WrongAnswer();
+        }
+
+        // question 2 - true
         private void btn2B_Click(object sender, RoutedEventArgs e)
         {
             // jawaban bener, skor + 100
@@ -121,65 +147,30 @@ namespace FPMobile
             {
 
             }
-
-            // back to select region
-            //NavigationService.Navigate(new Uri("/playRegion.xaml", UriKind.RelativeOrAbsolute));
-            //NavigationService.GoBack();
         }
 
-        void messagePrompt_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
-        {
-            NavigationService.GoBack();
-        }
-
-        // kalo jawaban salah
-        private void WrongAnswer()
-        {
-            // jawab salah, skor - 50
-            localScore -= 50;
-
-            var messagePrompt = new MessagePrompt
-            {
-                Title = "Wrong Answer",
-                Message = "Sorry, your answer is wrong"
-            };
-            messagePrompt.Show();
-        }
-
-        // wrong answer - 1
-        private void btnA_Click(object sender, RoutedEventArgs e)
-        {
-            WrongAnswer();
-        }
-
-        // wrong answe - 1
-        private void btnD_Click(object sender, RoutedEventArgs e)
-        {
-            WrongAnswer();
-        }
-
-        // wrong answer - 1
-        private void btnB_Click(object sender, RoutedEventArgs e)
-        {
-            WrongAnswer();
-        }
-
-        // wrong answer - 2
-        private void btn2A_Click(object sender, RoutedEventArgs e)
-        {
-            WrongAnswer();
-        }
-
-        // wrong answer - 2
+        // question 2 - wrong
         private void btn2C_Click(object sender, RoutedEventArgs e)
         {
             WrongAnswer();
         }
 
-        // wrong answer - 2
+        // question 2 - wrong
         private void btn2D_Click(object sender, RoutedEventArgs e)
         {
             WrongAnswer();
+        }
+
+        // go to next question
+        void messagePrompt_Completed2(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            MyPivot.SelectedIndex = 2;
+        }
+
+        // back to select region
+        void messagePrompt_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

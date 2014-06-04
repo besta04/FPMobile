@@ -94,6 +94,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class\Users.cs" />
+    <Compile Include="GamePage\GamePageSumut.xaml.cs">
+      <DependentUpon>GamePageSumut.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePage\GamePageAceh.xaml.cs">
       <DependentUpon>GamePageAceh.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="GamePage\GamePageSumut.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GamePage\GamePageAceh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,13 +177,13 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Image\instruction.png" />
-    <Content Include="Image\jelajahi.png" />
-    <Content Include="Image\logo.png" />
-    <Content Include="Image\new game.png" />
-    <Content Include="Image\play.png" />
-    <Content Include="Image\splashscreenv1.png" />
-    <Content Include="Image\welcome.png" />
+    <Content Include="Assets\Images\instruction.png" />
+    <Content Include="Assets\Images\jelajahi.png" />
+    <Content Include="Assets\Images\logo.png" />
+    <Content Include="Assets\Images\new game.png" />
+    <Content Include="Assets\Images\play.png" />
+    <Content Include="Assets\Images\splashscreenv1.png" />
+    <Content Include="Assets\Images\welcome.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
