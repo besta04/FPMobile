@@ -84,11 +84,11 @@ namespace FPMobile
             }
             else if (myLst.SelectedItem.ToString() == "Riau")
             {
-                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageRiau.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "Sumatera Selatan")
             {
-                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageSumsel.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "DKI Jakarta")
             {

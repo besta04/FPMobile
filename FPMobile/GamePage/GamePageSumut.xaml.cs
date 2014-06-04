@@ -150,7 +150,7 @@ namespace FPMobile
             Users user = db.user.Single(p => p.Name == name);
             user.RegionSumut = true;
             //user.LastLevel = 2;
-            user.Score = localScore;
+            user.Score += localScore;
             try
             {
                 db.SubmitChanges();

@@ -149,3 +149,5 @@ C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.dll
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.pdb
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\XapCacheFile.xml
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageSumut.g.cs
+C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageRiau.g.cs
+C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageSumsel.g.cs

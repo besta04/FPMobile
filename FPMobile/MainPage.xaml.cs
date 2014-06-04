@@ -88,7 +88,7 @@ namespace FPMobile
                            select all.LastLevel;
                 foreach (var item in temp)
                 {
-                    lastLevel += item;
+                    lastLevel = item;
                 }
                 NavigationService.Navigate(new Uri("/selectLevel.xaml?name=" + name + "&lastLevel=" + lastLevel.ToString(), UriKind.RelativeOrAbsolute));
             }
