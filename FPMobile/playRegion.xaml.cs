@@ -92,15 +92,15 @@ namespace FPMobile
             }
             else if (myLst.SelectedItem.ToString() == "DKI Jakarta")
             {
-                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=jakarta", UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "Jawa Tengah")
             {
-                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                //NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "Jawa Timur")
             {
-                //NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                //NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
         }
     }

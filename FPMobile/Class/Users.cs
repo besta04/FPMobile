@@ -34,6 +34,9 @@ namespace FPMobile.Class
 
         [Column]
         public bool RegionSumsel { set; get; }
+
+        [Column]
+        public bool RegionJakarta { set; get; }
     }
 
     public class UsersContext : DataContext

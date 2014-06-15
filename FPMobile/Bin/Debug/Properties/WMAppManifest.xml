@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{3be55264-fd32-4d8f-ac7e-d4b048a98414}" Title="FPMobile" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="FPMobile author" Description="Sample description" Publisher="FPMobile" PublisherID="{c5dbae4b-6920-468d-8b15-317fcc277e6c}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+  <Languages xmlns="">
+    <Language code="id" />
+  </Languages>
+  <App xmlns="" ProductID="{3be55264-fd32-4d8f-ac7e-d4b048a98414}" Title="Merah Putih" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mobile Entertainment" Description="Sample description" Publisher="Averousi's" PublisherID="{c5dbae4b-6920-468d-8b15-317fcc277e6c}">
+    <IconPath IsRelative="true" IsResource="false">logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -16,15 +19,18 @@
     <Tokens>
       <PrimaryToken TokenID="FPMobileToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">logo.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>FPMobile</Title>
+          <BackgroundImageURI IsRelative="true" IsResource="false">logo.png</BackgroundImageURI>
+          <Title>Merah Putih</Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>
           <BackTitle></BackTitle>
+          <LargeBackgroundImageURI IsRelative="true" IsResource="false">logo.png</LargeBackgroundImageURI>
+          <LargeBackContent />
+          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false"></LargeBackBackgroundImageURI>
           <DeviceLockImageURI></DeviceLockImageURI>
-          <HasLarge></HasLarge>
+          <HasLarge>True</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

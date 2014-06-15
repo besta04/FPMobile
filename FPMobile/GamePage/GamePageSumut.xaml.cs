@@ -161,10 +161,57 @@ namespace FPMobile
             }
         }
 
-        // back to select region
+        // back to select region / level
         void messagePrompt_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
         {
-            NavigationService.GoBack();
+            bool aceh = false, sumut = false, riau = false, sumsel = false;
+            var temp = from all in db.user
+                       where all.Name == name
+                       select all.RegionAceh;
+            foreach (var item in temp)
+            {
+                aceh = item;
+            }
+            var temp2 = from all in db.user
+                        where all.Name == name
+                        select all.RegionSumut;
+            foreach (var item in temp2)
+            {
+                sumut = item;
+            }
+            var temp3 = from all in db.user
+                        where all.Name == name
+                        select all.RegionRiau;
+            foreach (var item in temp3)
+            {
+                riau = item;
+            }
+            var temp4 = from all in db.user
+                        where all.Name == name
+                        select all.RegionSumsel;
+            foreach (var item in temp4)
+            {
+                sumsel = item;
+            }
+            if (aceh == true && sumsel == true && sumut == true && riau == true)
+            {
+                Users user = db.user.Single(p => p.Name == name);
+                user.LastLevel = 2;
+                lastLevel = 2;
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch
+                {
+
+                }
+                NavigationService.Navigate(new Uri("/selectLevel.xaml?mode=back&name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+            }
+            else
+            {
+                NavigationService.GoBack();
+            }
         }
 
         // go to next question

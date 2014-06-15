@@ -68,45 +68,52 @@ namespace FPMobile
             {
                 NavigationContext.QueryString["mode"].ToString();
                 NavigationService.RemoveBackEntry();
+                NavigationService.RemoveBackEntry();
+                //NavigationService.RemoveBackEntry();
+                WhenLoaded();
             }
             catch
             {
-                name = NavigationContext.QueryString["name"].ToString();
-                lastLevel = 0;
-                lastLevel = Convert.ToInt32(NavigationContext.QueryString["lastLevel"].ToString());
-                //MessageBox.Show(lastLevel.ToString());
-                if (lastLevel == 2)
-                {
-                    btnLvl2.IsEnabled = true;
-                }
-                else if (lastLevel == 3)
-                {
-                    btnLvl2.IsEnabled = true;
-                    btnLvl3.IsEnabled = true;
-                }
-                else if (lastLevel == 4)
-                {
-                    btnLvl2.IsEnabled = true;
-                    btnLvl3.IsEnabled = true;
-                    btnLvl4.IsEnabled = true;
-                }
-                else if (lastLevel == 5)
-                {
-                    btnLvl2.IsEnabled = true;
-                    btnLvl3.IsEnabled = true;
-                    btnLvl4.IsEnabled = true;
-                    btnLvl5.IsEnabled = true;
-                }
-                else if (lastLevel == 6)
-                {
-                    btnLvl2.IsEnabled = true;
-                    btnLvl3.IsEnabled = true;
-                    btnLvl4.IsEnabled = true;
-                    btnLvl5.IsEnabled = true;
-                    btnLvl6.IsEnabled = true;
-                }
+                WhenLoaded();
             }
-            
+        }
+
+        private void WhenLoaded()
+        {
+            name = NavigationContext.QueryString["name"].ToString();
+            lastLevel = 0;
+            lastLevel = Convert.ToInt32(NavigationContext.QueryString["lastLevel"].ToString());
+            //MessageBox.Show(lastLevel.ToString());
+            if (lastLevel == 2)
+            {
+                btnLvl2.IsEnabled = true;
+            }
+            else if (lastLevel == 3)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+            }
+            else if (lastLevel == 4)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+                btnLvl4.IsEnabled = true;
+            }
+            else if (lastLevel == 5)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+                btnLvl4.IsEnabled = true;
+                btnLvl5.IsEnabled = true;
+            }
+            else if (lastLevel == 6)
+            {
+                btnLvl2.IsEnabled = true;
+                btnLvl3.IsEnabled = true;
+                btnLvl4.IsEnabled = true;
+                btnLvl5.IsEnabled = true;
+                btnLvl6.IsEnabled = true;
+            }
         }
     }
 }

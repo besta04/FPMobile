@@ -11,7 +11,30 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    toolkit:TiltEffect.IsTiltEnabled="True"
     shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -23,7 +46,11 @@
                     <ImageBrush Stretch="Fill" ImageSource="/Assets/Images/riau.png"/>
                 </phone:PivotItem.Background>
                 <Grid Margin="2,0,-2,0">
-                    <Button x:Name="btnGO" Content="Jelajahi !" HorizontalAlignment="Left" Margin="289,644,0,0" VerticalAlignment="Top" Click="Button_Click_1" Background="#FFAD1515" IsEnabled="False"/>
+                    <Button x:Name="btnGO" Content="" HorizontalAlignment="Left" Margin="226,564,0,0" VerticalAlignment="Top" Click="Button_Click_1" IsEnabled="False" BorderBrush="{x:Null}" Height="205" Width="229">
+                        <Button.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/jelajahi.png"/>
+                        </Button.Background>
+                    </Button>
                 </Grid>
             </phone:PivotItem>
 

@@ -100,6 +100,9 @@
     <Compile Include="GamePage\GamePageRiau.xaml.cs">
       <DependentUpon>GamePageRiau.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GamePage\GamePageLevel2.xaml.cs">
+      <DependentUpon>GamePageLevel2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePage\GamePageSumut.xaml.cs">
       <DependentUpon>GamePageSumut.xaml</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="GamePage\GamePageLevel2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GamePage\GamePageSumut.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -169,21 +176,29 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Icons\level2.png" />
+    <Content Include="Assets\Icons\level4.png" />
+    <Content Include="Assets\Icons\level5.png" />
+    <Content Include="Assets\Icons\level5a.png" />
+    <Content Include="Assets\Icons\level6.png" />
+    <Content Include="Assets\Icons\level1.png" />
     <Content Include="Assets\Images\aceh.png" />
-    <Content Include="Assets\Images\jakarta.png" />
-    <Content Include="Assets\Images\jateng.png" />
-    <Content Include="Assets\Images\jatim.png" />
+    <Content Include="Assets\Images\Level2\jakarta-soal10.png" />
+    <Content Include="Assets\Images\Level2\jakarta-soal9.png" />
+    <Content Include="Assets\Images\Level2\jakarta.png" />
+    <Content Include="Assets\Images\Level2\jateng - soal11.png" />
+    <Content Include="Assets\Images\Level2\jateng - soal12.png" />
+    <Content Include="Assets\Images\Level2\jateng.png" />
+    <Content Include="Assets\Images\Level2\jatim - soal13.png" />
+    <Content Include="Assets\Images\Level2\jatim - soal14.png" />
+    <Content Include="Assets\Images\Level2\jatim.png" />
+    <Content Include="Assets\Images\levelling.png" />
+    <Content Include="Assets\Images\pilihdaerah.png" />
     <Content Include="Assets\Images\riau - soal5.png" />
     <Content Include="Assets\Images\riau - soal6.png" />
     <Content Include="Assets\Images\riau.png" />
     <Content Include="Assets\Images\soal1.png" />
-    <Content Include="Assets\Images\soal10.png" />
-    <Content Include="Assets\Images\soal11.png" />
-    <Content Include="Assets\Images\soal12.png" />
-    <Content Include="Assets\Images\soal13.png" />
-    <Content Include="Assets\Images\soal14.png" />
     <Content Include="Assets\Images\soal2.png" />
-    <Content Include="Assets\Images\soal9.png" />
     <Content Include="Assets\Images\sumsel - soal7.png" />
     <Content Include="Assets\Images\sumsel - soal8.png" />
     <Content Include="Assets\Images\sumsel.png" />
@@ -212,6 +227,7 @@
     <Content Include="Assets\Images\play.png" />
     <Content Include="Assets\Images\splashscreenv1.png" />
     <Content Include="Assets\Images\welcome.png" />
+    <Content Include="logo.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
