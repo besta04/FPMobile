@@ -37,6 +37,18 @@ namespace FPMobile.Class
 
         [Column]
         public bool RegionJakarta { set; get; }
+
+        [Column]
+        public bool RegionJateng { set; get; }
+
+        [Column]
+        public bool RegionJatim { set; get; }
+
+        [Column]
+        public bool RegionKalbar { set; get; }
+
+        [Column]
+        public bool RegionKaltim { set; get; }
     }
 
     public class UsersContext : DataContext
