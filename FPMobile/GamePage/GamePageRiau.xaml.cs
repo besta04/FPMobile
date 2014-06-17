@@ -63,7 +63,7 @@ namespace FPMobile
         private void WrongAnswer()
         {
             // jawab salah, skor - 50
-            localScore -= 50;
+            localScore -= 25;
 
             var messagePrompt = new MessagePrompt
             {

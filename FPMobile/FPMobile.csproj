@@ -94,6 +94,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class\Users.cs" />
+    <Compile Include="GamePage\GamePageLevel3.xaml.cs">
+      <DependentUpon>GamePageLevel3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePage\GamePageSumsel.xaml.cs">
       <DependentUpon>GamePageSumsel.xaml</DependentUpon>
     </Compile>
@@ -125,12 +128,19 @@
     <Compile Include="selectLevel.xaml.cs">
       <DependentUpon>selectLevel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreenControl.xaml.cs">
+      <DependentUpon>SplashScreenControl.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="GamePage\GamePageLevel3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GamePage\GamePageSumsel.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -163,6 +173,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SplashScreenControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -192,6 +206,17 @@
     <Content Include="Assets\Images\Level2\jatim-soal13.png" />
     <Content Include="Assets\Images\Level2\jatim-soal14.png" />
     <Content Include="Assets\Images\Level2\jatim.png" />
+    <Content Include="Assets\Images\Level3\sulsel-soal19.png" />
+    <Content Include="Assets\Images\Level3\sulsel-soal20.png" />
+    <Content Include="Assets\Images\Level3\sulsel.png" />
+    <Content Include="Assets\Images\Level3\sulteng-soal17.png" />
+    <Content Include="Assets\Images\Level3\sulteng-soal18.png" />
+    <Content Include="Assets\Images\Level3\sulteng.png" />
+    <Content Include="Assets\Images\Level3\sultenggara-soal21.png" />
+    <Content Include="Assets\Images\Level3\sultenggara.png" />
+    <Content Include="Assets\Images\Level3\sulut-soal15.png" />
+    <Content Include="Assets\Images\Level3\sulut-soal16.png" />
+    <Content Include="Assets\Images\Level3\sulut.png" />
     <Content Include="Assets\Images\levelling.png" />
     <Content Include="Assets\Images\pilihdaerah.png" />
     <Content Include="Assets\Images\riau - soal5.png" />

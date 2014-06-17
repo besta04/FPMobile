@@ -38,8 +38,10 @@ namespace FPMobile
             }
             else if (level == 3)
             {
-                region.Add("Kalimantan Barat");
-                region.Add("Kalimantan Tengah");
+                region.Add("Sulawesi Utara");
+                region.Add("Sulawesi Tengah");
+                region.Add("Sulawesi Selatan");
+                region.Add("Sulawesi Tenggara");
             }
             else if (level == 4)
             {
@@ -49,10 +51,8 @@ namespace FPMobile
             }
             else if (level == 5)
             {
-                region.Add("Sulawesi Utara");
-                region.Add("Sulawesi Tengah");
-                region.Add("Sulawesi Selatan");
-                region.Add("Sulawesi Tenggara");
+                region.Add("Kalimantan Barat");
+                region.Add("Kalimantan Tengah");
             }
             else if (level == 6)
             {
@@ -101,6 +101,22 @@ namespace FPMobile
             else if (myLst.SelectedItem.ToString() == "Jawa Timur")
             {
                 NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=jatim", UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Sulawesi Utara")
+            {
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel3.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=sulut", UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Sulawesi Tengah")
+            {
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel3.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=sulteng", UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Sulawesi Selatan")
+            {
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel3.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=sulsel", UriKind.RelativeOrAbsolute));
+            }
+            else if (myLst.SelectedItem.ToString() == "Sulawesi Tenggara")
+            {
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel3.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=sultenggara", UriKind.RelativeOrAbsolute));
             }
         }
     }

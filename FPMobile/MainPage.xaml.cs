@@ -12,11 +12,16 @@ using FPMobile.Class;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using Coding4Fun.Toolkit.Controls;
+using System.Windows.Controls.Primitives;
+using System.ComponentModel;
+using System.Threading;
 
 namespace FPMobile
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private Popup popup;
+        private BackgroundWorker backroungWorker;
         public string name;
         public int lastLevel;
         UsersContext db;
@@ -25,9 +30,42 @@ namespace FPMobile
         public MainPage()
         {
             InitializeComponent();
-
+            ShowSplash();
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+        }
+
+        // splash screen
+        private void ShowSplash()
+        {
+            this.popup = new Popup();
+            this.popup.Child = new SplashScreenControl();
+            this.popup.IsOpen = true;
+            StartLoadingData();
+        }
+
+        private void StartLoadingData()
+        {
+            backroungWorker = new BackgroundWorker();
+            backroungWorker.DoWork += backroungWorker_DoWork;
+            backroungWorker.RunWorkerCompleted += backroungWorker_RunWorkerCompleted;
+            backroungWorker.RunWorkerAsync();
+        }
+
+        void backroungWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.Dispatcher.BeginInvoke(() =>
+            {
+                this.popup.IsOpen = false;
+
+            }
+            );
+        }
+
+        void backroungWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            //here we can load data
+            Thread.Sleep(5000);
         }
 
         // New Game
@@ -51,7 +89,14 @@ namespace FPMobile
                 RegionAceh = false,
                 RegionRiau = false,
                 RegionSumsel = false,
-                RegionSumut = false
+                RegionSumut = false,
+                RegionJakarta = false,
+                RegionJateng = false,
+                RegionJatim = false,
+                RegionSulut = false,
+                RegionSulteng = false,
+                RegionSulsel = false,
+                RegionSultenggara = false
             };
             db.user.InsertOnSubmit(user);
             try
@@ -117,9 +162,13 @@ namespace FPMobile
 
         private void Refresh()
         {
-            var item = from all in db.user
-                       select all.Name;
-            myLst.ItemsSource = item;
+            try
+            {
+                var item = from all in db.user
+                           select all.Name;
+                myLst.ItemsSource = item;
+            }
+            catch { }
         }
     }
 }
