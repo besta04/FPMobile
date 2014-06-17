@@ -152,3 +152,4 @@ C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.csproj.GenerateRes
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.dll
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.pdb
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\XapCacheFile.xml
+C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.csprojResolveAssemblyReference.cache

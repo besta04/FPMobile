@@ -83,7 +83,7 @@ namespace FPMobile
             name = NavigationContext.QueryString["name"].ToString();
             lastLevel = 0;
             lastLevel = Convert.ToInt32(NavigationContext.QueryString["lastLevel"].ToString());
-            //MessageBox.Show(lastLevel.ToString());
+            
             if (lastLevel == 2)
             {
                 btnLvl2.IsEnabled = true;

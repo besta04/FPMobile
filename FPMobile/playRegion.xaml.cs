@@ -96,11 +96,11 @@ namespace FPMobile
             }
             else if (myLst.SelectedItem.ToString() == "Jawa Tengah")
             {
-                //NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=jateng", UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "Jawa Timur")
             {
-                //NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel2.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=jatim", UriKind.RelativeOrAbsolute));
             }
         }
     }
