@@ -45,10 +45,16 @@ namespace FPMobile.Class
         public bool RegionJatim { set; get; }
 
         [Column]
-        public bool RegionKalbar { set; get; }
+        public bool RegionSulut { set; get; }
 
         [Column]
-        public bool RegionKaltim { set; get; }
+        public bool RegionSulteng { set; get; }
+
+        [Column]
+        public bool RegionSultenggara { set; get; }
+
+        [Column]
+        public bool RegionSulsel { set; get; }
     }
 
     public class UsersContext : DataContext

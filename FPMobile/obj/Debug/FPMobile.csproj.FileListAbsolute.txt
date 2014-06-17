@@ -138,6 +138,7 @@ C:\Users\besta\Documents\FPMobile\FPMobile\Bin\Debug\vi-VN\Microsoft.Phone.Contr
 C:\Users\besta\Documents\FPMobile\FPMobile\Bin\Debug\zh-CN\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\besta\Documents\FPMobile\FPMobile\Bin\Debug\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\App.g.cs
+C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageLevel3.g.cs
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageSumsel.g.cs
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageRiau.g.cs
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageLevel2.g.cs
@@ -146,10 +147,10 @@ C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\GamePage\GamePageAceh.g.cs
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\MainPage.g.cs
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\playRegion.g.cs
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\selectLevel.g.cs
+C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\SplashScreenControl.g.cs
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.g.resources
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.Resources.AppResources.resources
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.csproj.GenerateResource.Cache
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.dll
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.pdb
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\XapCacheFile.xml
-C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.csprojResolveAssemblyReference.cache
