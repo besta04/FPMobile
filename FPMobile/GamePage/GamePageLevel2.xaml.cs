@@ -87,7 +87,6 @@ namespace FPMobile
                     // reset local score per region
                     localScore = 0;
                 }
-
             }
             else if (regions == "jateng")
             {
@@ -185,6 +184,31 @@ namespace FPMobile
                     localScore = 0;
                 }
             }
+
+            // ganti nama, skor, jumlah hint di UI
+            UIname.Text = name;
+            try
+            {
+                int skor = 0;
+                var scores = from all in db.user
+                             where all.Name == name
+                             select all.Score;
+                foreach (var temps in scores)
+                {
+                    skor = temps;
+                }
+                UIScore.Text = skor.ToString();
+                int hint = 0;
+                var hints = from all in db.user
+                            where all.Name == name
+                            select all.Hint;
+                foreach (var temps in hints)
+                {
+                    hint = temps;
+                }
+                UIHint.Text = hint.ToString();
+            }
+            catch { }
         }
 
         // go to first pivot when enter
@@ -243,7 +267,7 @@ namespace FPMobile
         // question 1 - true for jatim
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(regions == "jatim")
+            if (regions == "jatim")
             {
                 btnA.IsEnabled = false;
                 btnB.IsEnabled = false;
@@ -270,7 +294,7 @@ namespace FPMobile
         // question 1 - true for jateng
         private void btnD_Click(object sender, RoutedEventArgs e)
         {
-            if(regions == "jateng")
+            if (regions == "jateng")
             {
                 btnA.IsEnabled = false;
                 btnB.IsEnabled = false;
@@ -297,7 +321,7 @@ namespace FPMobile
         // question 2 - true for jateng
         private void btn2A_Click(object sender, RoutedEventArgs e)
         {
-            if(regions == "jateng")
+            if (regions == "jateng")
             {
                 // jawaban bener, skor + 100
                 localScore += 100;
@@ -336,7 +360,7 @@ namespace FPMobile
         // question 2 - true for jatim
         private void btn2B_Click(object sender, RoutedEventArgs e)
         {
-            if(regions == "jatim")
+            if (regions == "jatim")
             {
                 // jawaban bener, skor + 100
                 localScore += 100;
@@ -375,7 +399,7 @@ namespace FPMobile
         // question 2 - true for jakarta
         private void btn2C_Click(object sender, RoutedEventArgs e)
         {
-            if(regions == "jakarta")
+            if (regions == "jakarta")
             {
                 // jawaban bener, skor + 100
                 localScore += 100;
@@ -469,6 +493,24 @@ namespace FPMobile
         private void messagePrompt_Completed2(object sender, PopUpEventArgs<string, PopUpResult> e)
         {
             MyPivot.SelectedIndex = 2;
+        }
+
+        // hint pressed
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            int hint = Convert.ToInt32(UIHint.Text);
+            if (hint > 0)
+            {
+                hint--;
+                Users user = db.user.Single(p => p.Name == name);
+                user.Hint = hint;
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch { }
+                NavigationService.Navigate(new Uri("/UUDIndex.xaml", UriKind.Relative));
+            }
         }
     }
 }

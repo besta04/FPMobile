@@ -80,6 +80,11 @@
                 </Grid>
             </phone:PivotItem>
         </phone:Pivot>
+        <TextBlock x:Name="UIname" HorizontalAlignment="Left" Margin="10,2,0,0" TextWrapping="Wrap" Text="No Name" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,25,0,0" TextWrapping="Wrap" Text="Score : " VerticalAlignment="Top"/>
+        <TextBlock x:Name="UIScore" HorizontalAlignment="Left" Margin="79,26,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="419,-6,0,0" VerticalAlignment="Top" Width="51" Source="/Assets/Tiles/IconicTileSmall.png" Tap="Image_Tap"/>
+        <TextBlock x:Name="UIHint" HorizontalAlignment="Left" Margin="399,15,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

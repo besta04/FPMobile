@@ -35,7 +35,7 @@
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
-    
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" >
         <Grid.Background>
@@ -55,21 +55,6 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,132,12,10" Grid.ColumnSpan="2">
-            <Button Content="" Margin="27,411,266,0" VerticalAlignment="Top" Click="Button_Click" FontFamily="Portable User Interface" Height="150" BorderBrush="{x:Null}">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/new game.png"/>
-                </Button.Background>
-            </Button>
-            <Button Content="" Margin="138,219,139,0" VerticalAlignment="Top" Click="Button_Click_1" BorderBrush="{x:Null}" Height="186">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/play.png"/>
-                </Button.Background>
-            </Button>
-            <Button Content="" Margin="250,411,14,0" VerticalAlignment="Top" Click="Button_Click_2" BorderBrush="{x:Null}" Height="150">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/instruction.png"/>
-                </Button.Background>
-            </Button>
             <toolkit:ListPicker ExpansionMode="FullScreenOnly" x:Name="myLst" Header="Select your name :" BorderThickness="2" BorderBrush="White" SelectedIndex="-1" Margin="10,130,14,362" Background="{x:Null}" FontWeight="Bold" FontFamily="Segoe WP Black">
                 <toolkit:ListPicker.FullModeItemTemplate>
                     <DataTemplate>
@@ -78,6 +63,10 @@
                 </toolkit:ListPicker.FullModeItemTemplate>
             </toolkit:ListPicker>
             <TextBlock HorizontalAlignment="Left" Margin="60,390,0,0" TextWrapping="Wrap" Text="Not Listed ?" VerticalAlignment="Top" FontFamily="Portable User Interface"/>
+            <Image HorizontalAlignment="Left" Height="156" Margin="167,250,0,0" VerticalAlignment="Top" Width="147" Source="/Assets/Images/play.png" Tap="Button_Click"/>
+            <Image HorizontalAlignment="Left" Height="123" Margin="45,422,0,0" VerticalAlignment="Top" Width="141" Source="/Assets/Images/new game.png" Tap="Image_Tap"/>
+            <Image HorizontalAlignment="Left" Height="123" Margin="294,422,0,0" VerticalAlignment="Top" Width="137" Tap="Image_Tap_1" Source="/Assets/Images/instruction.png"/>
+            <TextBlock HorizontalAlignment="Left" Margin="294,219,0,0" TextWrapping="Wrap" Text="Delete Selected" VerticalAlignment="Top" Width="152" TextDecorations="Underline" Foreground="#FF0023FF" Tap="TextBlock_Tap"/>
         </Grid>
 
         <!--Uncomment to see an alignment grid to help ensure your controls are

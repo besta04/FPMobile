@@ -68,24 +68,14 @@ namespace FPMobile
             Thread.Sleep(5000);
         }
 
-        // New Game
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            InputPrompt input = new InputPrompt();
-            input.Title = "Your Name";
-            input.Message = "Please input your name";
-            input.Completed +=input_Completed;
-            input.IsCancelVisible = true;
-            input.Show();
-        }
-
-        void input_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
+        void inputPlayer(string name)
         {
             Users user = new Users
             {
-                Name = e.Result,
+                Name = name,
                 LastLevel = 1,
                 Score = 0,
+                Hint = 3,
                 RegionAceh = false,
                 RegionRiau = false,
                 RegionSumsel = false,
@@ -105,9 +95,9 @@ namespace FPMobile
                 var messagePrompt = new MessagePrompt
                 {
                     Title = "Success",
-                    Message = "Welcome " + e.Result
+                    Message = "Welcome " + name
                 };
-                messagePrompt.Show(); 
+                messagePrompt.Show();
             }
             catch (Exception ex)
             {
@@ -122,8 +112,35 @@ namespace FPMobile
             myLst.SelectedIndex = myLst.Items.Count - 1;
         }
 
+        // New Game
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            InputPrompt input = new InputPrompt();
+            input.Title = "Your Name";
+            input.Message = "Please input your name";
+            input.Completed += input_Completed;
+            input.IsCancelVisible = true;
+            input.Show();
+        }
+
+        void input_Completed(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            switch (e.PopUpResult)
+            {
+                case PopUpResult.Cancelled:
+                    break;
+                case PopUpResult.Ok:
+                    inputPlayer(e.Result);
+                    break;
+                case PopUpResult.UserDismissed:
+                    break;
+                default:
+                    break;
+            }
+        }
+
         // Play
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, System.Windows.Input.GestureEventArgs e)
         {
             try
             {
@@ -139,12 +156,44 @@ namespace FPMobile
             }
             catch
             {
+                InputPrompt input = new InputPrompt();
+                input.Title = "Your Name";
+                input.Message = "Please input your name";
+                input.Completed += input_Completed2;
+                input.IsCancelVisible = true;
+                input.Show();
+            }
+        }
 
+        private void input_Completed2(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            switch (e.PopUpResult)
+            {
+                case PopUpResult.Cancelled:
+                    break;
+                case PopUpResult.NoResponse:
+                    break;
+                case PopUpResult.Ok:
+                    inputPlayer(e.Result);
+                    name = myLst.SelectedItem.ToString();
+                    var temp = from all in db.user
+                               where all.Name == name
+                               select all.LastLevel;
+                    foreach (var item in temp)
+                    {
+                        lastLevel = item;
+                    }
+                    NavigationService.Navigate(new Uri("/selectLevel.xaml?name=" + name + "&lastLevel=" + lastLevel.ToString(), UriKind.RelativeOrAbsolute));
+                    break;
+                case PopUpResult.UserDismissed:
+                    break;
+                default:
+                    break;
             }
         }
 
         // Instruction
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Image_Tap_1(object sender, System.Windows.Input.GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/UUDIndex.xaml", UriKind.Relative));
         }
@@ -152,12 +201,12 @@ namespace FPMobile
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
             db = new UsersContext("isostore:/Users.sdf");
-            if(!db.DatabaseExists())
+            if (!db.DatabaseExists())
             {
                 db.CreateDatabase();
             }
 
-            Refresh();            
+            Refresh();
         }
 
         private void Refresh()
@@ -169,6 +218,28 @@ namespace FPMobile
                 myLst.ItemsSource = item;
             }
             catch { }
+        }
+
+        // delete user
+        private void TextBlock_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            try
+            {
+                var deletePlayer = from details in db.user
+                                   where details.Name == myLst.SelectedItem.ToString()
+                                   select details;
+
+                foreach (var detail in deletePlayer)
+                {
+                    db.user.DeleteOnSubmit(detail);
+                }
+                db.SubmitChanges();
+                Refresh();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

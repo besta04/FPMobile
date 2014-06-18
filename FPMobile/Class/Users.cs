@@ -11,10 +11,10 @@ namespace FPMobile.Class
     [Table]
     public class Users
     {
-        [Column(IsPrimaryKey=true, IsDbGenerated=true,DbType= "INT NOT NULL Identity")]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true, DbType = "INT NOT NULL Identity")]
         public int IdUser { set; get; }
 
-        [Column(CanBeNull=false)]
+        [Column(CanBeNull = false)]
         public string Name { set; get; }
 
         [Column]
@@ -22,6 +22,9 @@ namespace FPMobile.Class
 
         [Column]
         public int Score { set; get; }
+
+        [Column]
+        public int Hint { set; get; }
 
         [Column]
         public bool RegionAceh { set; get; }

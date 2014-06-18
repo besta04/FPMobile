@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using FPMobile.Class;
 
 namespace FPMobile
 {
@@ -14,6 +15,8 @@ namespace FPMobile
     {
         public string name;
         public int lastLevel;
+        UsersContext db;
+
         public playRegion()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace FPMobile
         {
             List<string> region = new List<string>();
             region.Clear();
-            if(level == 1)
+            if (level == 1)
             {
                 region.Add("D.I. Aceh");
                 region.Add("Sumatera Utara");
@@ -65,10 +68,41 @@ namespace FPMobile
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
+            db = new UsersContext("isostore:/Users.sdf");
+            if (!db.DatabaseExists())
+            {
+                db.CreateDatabase();
+            }
+
             int levels = Convert.ToInt32(NavigationContext.QueryString["level"].ToString());
             AddRegion(levels);
             name = NavigationContext.QueryString["name"].ToString();
             lastLevel = Convert.ToInt32(NavigationContext.QueryString["lastLevel"].ToString());
+
+            // ganti nama, skor, jumlah hint di UI
+            UIname.Text = name;
+            try
+            {
+                int skor = 0;
+                var scores = from all in db.user
+                             where all.Name == name
+                             select all.Score;
+                foreach (var temp in scores)
+                {
+                    skor = temp;
+                }
+                UIScore.Text = skor.ToString();
+                int hint = 0;
+                var hints = from all in db.user
+                            where all.Name == name
+                            select all.Hint;
+                foreach (var temp in hints)
+                {
+                    hint = temp;
+                }
+                UIHint.Text = hint.ToString();
+            }
+            catch { }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -117,6 +151,24 @@ namespace FPMobile
             else if (myLst.SelectedItem.ToString() == "Sulawesi Tenggara")
             {
                 NavigationService.Navigate(new Uri("/GamePage/GamePageLevel3.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=sultenggara", UriKind.RelativeOrAbsolute));
+            }
+        }
+
+        // hint pressed
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            int hint = Convert.ToInt32(UIHint.Text);
+            if (hint > 0)
+            {
+                hint--;
+                Users user = db.user.Single(p => p.Name == name);
+                user.Hint = hint;
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch { }
+                NavigationService.Navigate(new Uri("/UUDIndex.xaml", UriKind.Relative));
             }
         }
     }

@@ -94,6 +94,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class\Users.cs" />
+    <Compile Include="GamePage\GamePageLevel1.xaml.cs">
+      <DependentUpon>GamePageLevel1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePage\GamePageLevel3.xaml.cs">
       <DependentUpon>GamePageLevel3.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="GamePage\GamePageLevel1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GamePage\GamePageLevel3.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -197,12 +204,19 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Icons\level 2 written.png" />
+    <Content Include="Assets\Icons\level 6written.png" />
+    <Content Include="Assets\Icons\level1written.png" />
     <Content Include="Assets\Icons\level2.png" />
+    <Content Include="Assets\Icons\level3 written.png" />
+    <Content Include="Assets\Icons\level4 written.png" />
     <Content Include="Assets\Icons\level4.png" />
+    <Content Include="Assets\Icons\level5 written.png" />
     <Content Include="Assets\Icons\level5.png" />
     <Content Include="Assets\Icons\level5a.png" />
     <Content Include="Assets\Icons\level6.png" />
     <Content Include="Assets\Icons\level1.png" />
+    <Content Include="Assets\Icons\padlock.png" />
     <Content Include="Assets\Images\aceh.png" />
     <Content Include="Assets\Images\Level2\jakarta-soal10.png" />
     <Content Include="Assets\Images\Level2\jakarta-soal9.png" />

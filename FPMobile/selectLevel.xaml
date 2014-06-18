@@ -6,7 +6,6 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
@@ -35,7 +34,7 @@
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
-    
+
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
         <Grid.Background>
@@ -51,37 +50,23 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,135,14,0">
-            <Button x:Name="btnLvl1" Content="Level 1" Margin="39,48,283,0" VerticalAlignment="Top" Height="111" Click="Button_Click" BorderBrush="{x:Null}">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/level1.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="btnLvl2" Content="Level 2" Margin="255,110,60,0" VerticalAlignment="Top" Height="118" Click="Button_Click_1" IsEnabled="False" FontFamily="Portable User Interface" BorderBrush="{x:Null}">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/level2.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="btnLvl3" Content="Level 3" Margin="39,180,266,0" VerticalAlignment="Top" Height="136" Click="Button_Click_2" IsEnabled="False" BorderBrush="{x:Null}">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/level5.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="btnLvl4" Content="Level 4" Margin="241,271,55,0" VerticalAlignment="Top" Height="136" Click="Button_Click_3" IsEnabled="False" BorderBrush="{x:Null}">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/level4.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="btnLvl5" Content="Level 5" Margin="23,357,260,0" VerticalAlignment="Top" Height="133" Click="Button_Click_4" IsEnabled="False" BorderBrush="{x:Null}">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/level5a.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="btnLvl6" Content="Level 6" Margin="237,424,57,0" VerticalAlignment="Top" Height="148" Click="Button_Click_5" IsEnabled="False" BorderBrush="{x:Null}">
-                <Button.Background>
-                    <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/level6.png"/>
-                </Button.Background>
-            </Button>
+            <Image x:Name="btnLvl1" HorizontalAlignment="Left" Height="150" Margin="38,26,0,0" VerticalAlignment="Top" Width="184" Source="/Assets/Icons/level1written.png" Tap="Button_Click"/>
+            <Image x:Name="btnLvl2" HorizontalAlignment="Left" Height="144" Margin="262,32,0,0" VerticalAlignment="Top" Width="168" Source="/Assets/Icons/level 2 written.png" Tap="Button_Click_1" IsHitTestVisible="False" Opacity="0.5"/>
+            <Image x:Name="btnLvl3" HorizontalAlignment="Left" Height="140" Margin="38,242,0,0" VerticalAlignment="Top" Width="154" Source="/Assets/Icons/level3 written.png" Tap="Button_Click_2" IsHitTestVisible="False" Opacity="0.5"/>
+            <Image x:Name="btnLvl4" HorizontalAlignment="Left" Height="124" Margin="262,242,0,0" VerticalAlignment="Top" Width="151" Source="/Assets/Icons/level4 written.png" Tap="Button_Click_3" IsHitTestVisible="False" Opacity="0.5"/>
+            <Image x:Name="btnLvl5" HorizontalAlignment="Left" Height="134" Margin="38,406,0,0" VerticalAlignment="Top" Width="149" Tap="Button_Click_4" Source="/Assets/Icons/level5 written.png" IsHitTestVisible="False" Opacity="0.5"/>
+            <Image x:Name="btnLvl6" HorizontalAlignment="Left" Height="141" Margin="262,399,0,0" VerticalAlignment="Top" Width="168" Tap="Button_Click_5" Source="/Assets/Icons/level 6written.png" IsHitTestVisible="False" Opacity="0.5"/>
+            <Image x:Name="gembok2" Height="72" Margin="362,91,43,0" VerticalAlignment="Top" Width="51" Source="/Assets/Icons/padlock.png" IsHitTestVisible="False"/>
+            <Image x:Name="gembok3" HorizontalAlignment="Left" Height="72" Margin="155,242,0,0" VerticalAlignment="Top" Width="51" Source="/Assets/Icons/padlock.png" IsHitTestVisible="False"/>
+            <Image x:Name="gembok4" HorizontalAlignment="Left" Height="72" Margin="362,242,0,0" VerticalAlignment="Top" Width="51" Source="/Assets/Icons/padlock.png" IsHitTestVisible="False"/>
+            <Image x:Name="gembok5" HorizontalAlignment="Left" Height="72" Margin="141,406,0,0" VerticalAlignment="Top" Width="51" Source="/Assets/Icons/padlock.png" IsHitTestVisible="False"/>
+            <Image x:Name="gembok6" HorizontalAlignment="Left" Height="72" Margin="362,453,0,0" VerticalAlignment="Top" Width="51" Source="/Assets/Icons/padlock.png" IsHitTestVisible="False"/>
         </Grid>
+        <TextBlock x:Name="UIname" HorizontalAlignment="Left" Margin="10,8,0,0" TextWrapping="Wrap" Text="No Name" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,35,0,0" TextWrapping="Wrap" Text="Score : " VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBlock x:Name="UIScore" HorizontalAlignment="Left" Margin="79,37,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="415,8,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="51" Source="/Assets/Tiles/IconicTileSmall.png" Tap="Image_Tap"/>
+        <TextBlock x:Name="UIHint" HorizontalAlignment="Left" Margin="395,25,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Grid.RowSpan="2"/>
     </Grid>
 
 </phone:PhoneApplicationPage>

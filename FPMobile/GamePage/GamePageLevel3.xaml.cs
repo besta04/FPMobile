@@ -233,6 +233,31 @@ namespace FPMobile
                     localScore = 0;
                 }
             }
+
+            // ganti nama, skor, jumlah hint di UI
+            UIname.Text = name;
+            try
+            {
+                int skor = 0;
+                var scores = from all in db.user
+                             where all.Name == name
+                             select all.Score;
+                foreach (var temps in scores)
+                {
+                    skor = temps;
+                }
+                UIScore.Text = skor.ToString();
+                int hint = 0;
+                var hints = from all in db.user
+                            where all.Name == name
+                            select all.Hint;
+                foreach (var temps in hints)
+                {
+                    hint = temps;
+                }
+                UIHint.Text = hint.ToString();
+            }
+            catch { }
         }
 
         // go to first pivot when enter
@@ -318,7 +343,7 @@ namespace FPMobile
         // question 1 - true for sulut
         private void btnD_Click(object sender, RoutedEventArgs e)
         {
-            if(regions == "sulut")
+            if (regions == "sulut")
             {
                 btnA.IsEnabled = false;
                 btnB.IsEnabled = false;
@@ -391,7 +416,7 @@ namespace FPMobile
         // question 2 - true for sulut & sulsel
         private void btn2C_Click(object sender, RoutedEventArgs e)
         {
-            if(regions == "sulut")
+            if (regions == "sulut")
             {
                 // jawaban bener, skor + 100
                 localScore += 100;
@@ -519,6 +544,24 @@ namespace FPMobile
         private void messagePrompt_Completed2(object sender, PopUpEventArgs<string, PopUpResult> e)
         {
             MyPivot.SelectedIndex = 2;
+        }
+
+        // hint pressed
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            int hint = Convert.ToInt32(UIHint.Text);
+            if (hint > 0)
+            {
+                hint--;
+                Users user = db.user.Single(p => p.Name == name);
+                user.Hint = hint;
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch { }
+                NavigationService.Navigate(new Uri("/UUDIndex.xaml", UriKind.Relative));
+            }
         }
     }
 }

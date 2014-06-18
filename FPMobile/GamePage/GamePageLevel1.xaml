@@ -1,0 +1,89 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="FPMobile.GamePageLevel1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    toolkit:TiltEffect.IsTiltEnabled="True"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot x:Name="MyPivot" Title="Merah Putih">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="" Margin="0,-42,0,0">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush x:Name="pivot1" Stretch="Fill" ImageSource="/Assets/Images/Level2/jakarta.png"/>
+                    </Grid.Background>
+                    <Button x:Name="btnGO" Content="" HorizontalAlignment="Left" Margin="238,611,0,-13" VerticalAlignment="Top" Click="Button_Click_1" IsEnabled="False" Height="171" Width="215" Foreground="{x:Null}" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Assets/Images/jelajahi.png"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="" Margin="0,-42,0,0">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush x:Name="pivot2" Stretch="Fill" ImageSource=""/>
+                    </Grid.Background>
+                    <Button x:Name="btnA" Content="" HorizontalAlignment="Left" Margin="62,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnA_Click"/>
+                    <Button x:Name="btnB" Content="" HorizontalAlignment="Left" Margin="271,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnB_Click"/>
+                    <Button x:Name="btnC" Content="" HorizontalAlignment="Left" Margin="274,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="Button_Click" IsEnabled="False"/>
+                    <Button x:Name="btnD" Content="" HorizontalAlignment="Left" Margin="62,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnD_Click"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item three-->
+            <phone:PivotItem Header="" Margin="0,-42,0,0">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush x:Name="pivot3" Stretch="Fill" ImageSource=""/>
+                    </Grid.Background>
+                    <Button x:Name="btn2A" Content="" HorizontalAlignment="Left" Margin="62,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2A_Click"/>
+                    <Button x:Name="btn2B" Content="" HorizontalAlignment="Left" Margin="271,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2B_Click"/>
+                    <Button x:Name="btn2C" Content="" HorizontalAlignment="Left" Margin="274,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="btn2C_Click" IsEnabled="False"/>
+                    <Button x:Name="btn2D" Content="" HorizontalAlignment="Left" Margin="62,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2D_Click"/>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+        <TextBlock x:Name="UIname" HorizontalAlignment="Left" Margin="10,2,0,0" TextWrapping="Wrap" Text="No Name" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,25,0,0" TextWrapping="Wrap" Text="Score : " VerticalAlignment="Top"/>
+        <TextBlock x:Name="UIScore" HorizontalAlignment="Left" Margin="79,26,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="419,-6,0,0" VerticalAlignment="Top" Width="51" Source="/Assets/Tiles/IconicTileSmall.png" Tap="Image_Tap"/>
+        <TextBlock x:Name="UIHint" HorizontalAlignment="Left" Margin="399,15,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>

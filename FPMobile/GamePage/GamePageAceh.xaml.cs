@@ -57,6 +57,31 @@ namespace FPMobile
                 btn2C.IsEnabled = true;
                 btn2D.IsEnabled = true;
             }
+
+            // ganti nama, skor, jumlah hint di UI
+            UIname.Text = name;
+            try
+            {
+                int skor = 0;
+                var scores = from all in db.user
+                             where all.Name == name
+                             select all.Score;
+                foreach (var temps in scores)
+                {
+                    skor = temps;
+                }
+                UIScore.Text = skor.ToString();
+                int hint = 0;
+                var hints = from all in db.user
+                            where all.Name == name
+                            select all.Hint;
+                foreach (var temps in hints)
+                {
+                    hint = temps;
+                }
+                UIHint.Text = hint.ToString();
+            }
+            catch { }
         }
 
         // kalo jawaban salah
@@ -212,11 +237,29 @@ namespace FPMobile
                 {
 
                 }
-                NavigationService.Navigate(new Uri("/selectLevel.xaml?mode=back&name="+name+"&lastLevel="+lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/selectLevel.xaml?mode=back&name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
             }
             else
             {
                 NavigationService.GoBack();
+            }
+        }
+
+        // hint pressed
+        private void Image_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            int hint = Convert.ToInt32(UIHint.Text);
+            if (hint > 0)
+            {
+                hint--;
+                Users user = db.user.Single(p => p.Name == name);
+                user.Hint = hint;
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch { }
+                NavigationService.Navigate(new Uri("/UUDIndex.xaml", UriKind.Relative));
             }
         }
     }
