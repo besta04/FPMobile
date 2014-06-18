@@ -14,9 +14,6 @@
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     toolkit:TiltEffect.IsTiltEnabled="True"
     shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
-    <phone:PhoneApplicationPage.Background>
-        <ImageBrush Stretch="Fill"/>
-    </phone:PhoneApplicationPage.Background>
 
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>

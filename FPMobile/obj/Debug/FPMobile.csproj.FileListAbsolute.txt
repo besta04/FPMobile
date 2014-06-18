@@ -154,6 +154,7 @@ C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.csproj.GenerateRes
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.dll
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.pdb
 C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\XapCacheFile.xml
+<<<<<<< HEAD
 C:\Users\Monika Maytri\Documents\FPMobile\FPMobile\Bin\Debug\Assets\ApplicationIcon.png
 C:\Users\Monika Maytri\Documents\FPMobile\FPMobile\Bin\Debug\Assets\Tiles\FlipCycleTileLarge.png
 C:\Users\Monika Maytri\Documents\FPMobile\FPMobile\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png
@@ -236,3 +237,7 @@ C:\Users\Monika Maytri\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.csproj.Gen
 C:\Users\Monika Maytri\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.dll
 C:\Users\Monika Maytri\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.pdb
 C:\Users\Monika Maytri\Documents\FPMobile\FPMobile\obj\Debug\XapCacheFile.xml
+=======
+C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\FPMobile.csprojResolveAssemblyReference.cache
+C:\Users\besta\Documents\FPMobile\FPMobile\obj\Debug\UUDIndex.g.cs
+>>>>>>> 2a885ef0403405a1f3c577b8194b3639f541925e
