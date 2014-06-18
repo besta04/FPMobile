@@ -24,16 +24,10 @@ namespace FPMobile
             list.Add("BAB II : Majelis Permusyawaratan Rakyat");
             list.Add("BAB III : Kekuasaan Pemerintahan Negara");
             list.Add("BAB V : Kementrian Negara");
-            list.Add("BAB VI : Pemerintah Daerah");
             list.Add("BAB VII : Dewan Perwakilan Rakyat");
-            list.Add("BAB VIIA : Dewan Perwakilan Daerah");
-            list.Add("BAB VIIB : Pemilihan Umum");
             list.Add("BAB VIII : Hal Keuangan");
-            list.Add("BAB VIIIA : Badan Pemeriksa Keuangan");
             list.Add("BAB IX : Kekuasaan Kehakiman");
-            list.Add("BAB IXA : Wilayah Negara");
             list.Add("BAB X : Warga Negara dan Penduduk");
-            list.Add("BAB XA : Hak Asasi Manusia");
             list.Add("BAB XI : Agama");
             list.Add("BAB XII : Pertahanan Negara dan Keamanan Negara");
             list.Add("BAB XIII : Pendidikan dan Kebudayaan");
@@ -45,7 +39,18 @@ namespace FPMobile
 
         private void StackPanel_Tap(object sender, System.Windows.Input.GestureEventArgs e)
         {
-
+            if (MainListBox.SelectedItem.ToString() == "BAB III : Kekuasaan Pemerintahan Negara")
+            {
+                NavigationService.Navigate(new Uri("/UUDRead_6pivot.xaml", UriKind.Relative));
+            }
+            else if (MainListBox.SelectedItem.ToString() == "BAB VII : Dewan Perwakilan Rakyat" || MainListBox.SelectedItem.ToString() == "BAB VIII : Hal Keuangan" || MainListBox.SelectedItem.ToString() == "BAB XIII : Pendidikan dan Kebudayaan" || MainListBox.SelectedItem.ToString() == "BAB XIV : Perekonomian Nasional dan Kesejahteraan Sosial")
+            {
+                NavigationService.Navigate(new Uri("/UUDRead_2pivot.xaml?bab=" + MainListBox.SelectedItem.ToString(), UriKind.Relative));
+            }
+            else
+            {
+                NavigationService.Navigate(new Uri("/UUDRead.xaml?bab=" + MainListBox.SelectedItem.ToString(), UriKind.Relative));
+            }
         }
     }
 }

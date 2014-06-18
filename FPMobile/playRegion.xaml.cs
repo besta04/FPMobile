@@ -110,19 +110,19 @@ namespace FPMobile
             //MessageBox.Show(myLst.SelectedItem.ToString());
             if (myLst.SelectedItem.ToString() == "D.I. Aceh")
             {
-                NavigationService.Navigate(new Uri("/GamePage/GamePageAceh.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel1.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=aceh", UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "Sumatera Utara")
             {
-                NavigationService.Navigate(new Uri("/GamePage/GamePageSumut.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel1.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=sumut", UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "Riau")
             {
-                NavigationService.Navigate(new Uri("/GamePage/GamePageRiau.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel1.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=riau", UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "Sumatera Selatan")
             {
-                NavigationService.Navigate(new Uri("/GamePage/GamePageSumsel.xaml?name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                NavigationService.Navigate(new Uri("/GamePage/GamePageLevel1.xaml?name=" + name + "&lastLevel=" + lastLevel + "&region=sumsel", UriKind.RelativeOrAbsolute));
             }
             else if (myLst.SelectedItem.ToString() == "DKI Jakarta")
             {

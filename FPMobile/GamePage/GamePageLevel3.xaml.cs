@@ -11,6 +11,7 @@ using Coding4Fun.Toolkit.Controls;
 using FPMobile.Class;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using Microsoft.Phone.Tasks;
 
 namespace FPMobile
 {
@@ -521,22 +522,47 @@ namespace FPMobile
 
             if (flag1 == true && flag2 == true && flag3 == true && flag4 == true)
             {
-                Users user = db.user.Single(p => p.Name == name);
-                user.LastLevel = 4;
-                lastLevel = 4;
-                try
-                {
-                    db.SubmitChanges();
-                }
-                catch
-                {
+                //Users user = db.user.Single(p => p.Name == name);
+                //user.LastLevel = 4;
+                //lastLevel = 4;
+                //try
+                //{
+                //    db.SubmitChanges();
+                //}
+                //catch
+                //{
 
-                }
-                NavigationService.Navigate(new Uri("/selectLevel.xaml?mode=back&name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                //}
+                var messagePrompt = new MessagePrompt
+                {
+                    Title = "Level Completed",
+                    Message = "Congratulations, you have finished the last level, stay tune and more level will be unlocked! We would love to hear your opinion of this game, would you like to rate this app?"
+                };
+                messagePrompt.Completed += messagePrompt_Completed3;
+                messagePrompt.Show();
             }
             else
             {
                 NavigationService.GoBack();
+            }
+        }
+
+        void messagePrompt_Completed3(object sender, PopUpEventArgs<string, PopUpResult> e)
+        {
+            switch (e.PopUpResult)
+            {
+                case PopUpResult.Cancelled:
+                    NavigationService.Navigate(new Uri("/selectLevel.xaml?mode=back&name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                    break;
+                case PopUpResult.Ok:
+                    MarketplaceReviewTask rate = new MarketplaceReviewTask();
+                    rate.Show();
+                    NavigationService.Navigate(new Uri("/selectLevel.xaml?mode=back&name=" + name + "&lastLevel=" + lastLevel, UriKind.RelativeOrAbsolute));
+                    break;
+                case PopUpResult.UserDismissed:
+                    break;
+                default:
+                    break;
             }
         }
 

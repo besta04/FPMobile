@@ -100,20 +100,8 @@
     <Compile Include="GamePage\GamePageLevel3.xaml.cs">
       <DependentUpon>GamePageLevel3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GamePage\GamePageSumsel.xaml.cs">
-      <DependentUpon>GamePageSumsel.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GamePage\GamePageRiau.xaml.cs">
-      <DependentUpon>GamePageRiau.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GamePage\GamePageLevel2.xaml.cs">
       <DependentUpon>GamePageLevel2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GamePage\GamePageSumut.xaml.cs">
-      <DependentUpon>GamePageSumut.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GamePage\GamePageAceh.xaml.cs">
-      <DependentUpon>GamePageAceh.xaml</DependentUpon>
     </Compile>
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -137,6 +125,15 @@
     <Compile Include="UUDIndex.xaml.cs">
       <DependentUpon>UUDIndex.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UUDRead.xaml.cs">
+      <DependentUpon>UUDRead.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UUDRead_2pivot.xaml.cs">
+      <DependentUpon>UUDRead_2pivot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UUDRead_6pivot.xaml.cs">
+      <DependentUpon>UUDRead_6pivot.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -151,25 +148,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GamePage\GamePageSumsel.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GamePage\GamePageRiau.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="GamePage\GamePageLevel2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GamePage\GamePageSumut.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GamePage\GamePageAceh.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
@@ -188,6 +169,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UUDIndex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UUDRead.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UUDRead_2pivot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UUDRead_6pivot.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -218,6 +211,7 @@
     <Content Include="Assets\Icons\level1.png" />
     <Content Include="Assets\Icons\padlock.png" />
     <Content Include="Assets\Images\aceh.png" />
+    <Content Include="Assets\Images\index pasal.png" />
     <Content Include="Assets\Images\Level2\jakarta-soal10.png" />
     <Content Include="Assets\Images\Level2\jakarta-soal9.png" />
     <Content Include="Assets\Images\Level2\jakarta.png" />
@@ -251,6 +245,29 @@
     <Content Include="Assets\Images\sumut-soal3.png" />
     <Content Include="Assets\Images\sumut-soal4.png" />
     <Content Include="Assets\Images\sumut.png" />
+    <Content Include="Assets\Pasal\bab01.png" />
+    <Content Include="Assets\Pasal\bab10.png" />
+    <Content Include="Assets\Pasal\bab11.png" />
+    <Content Include="Assets\Pasal\bab12.png" />
+    <Content Include="Assets\Pasal\bab13-p1.png" />
+    <Content Include="Assets\Pasal\bab13-p2.png" />
+    <Content Include="Assets\Pasal\bab14-p1.png" />
+    <Content Include="Assets\Pasal\bab14-p2.png" />
+    <Content Include="Assets\Pasal\bab15.png" />
+    <Content Include="Assets\Pasal\bab16.png" />
+    <Content Include="Assets\Pasal\bab02.png" />
+    <Content Include="Assets\Pasal\bab03-p1.png" />
+    <Content Include="Assets\Pasal\bab03-p2.png" />
+    <Content Include="Assets\Pasal\bab03-p3.png" />
+    <Content Include="Assets\Pasal\bab03-p4.png" />
+    <Content Include="Assets\Pasal\bab03-p5.png" />
+    <Content Include="Assets\Pasal\bab03-p6.png" />
+    <Content Include="Assets\Pasal\bab05.png" />
+    <Content Include="Assets\Pasal\bab07-p1.png" />
+    <Content Include="Assets\Pasal\bab07-p2.png" />
+    <Content Include="Assets\Pasal\bab08-p1.png" />
+    <Content Include="Assets\Pasal\bab08-p2.png" />
+    <Content Include="Assets\Pasal\bab09.png" />
     <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
