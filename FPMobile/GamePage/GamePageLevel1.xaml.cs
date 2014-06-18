@@ -72,7 +72,7 @@ namespace FPMobile
                 }
 
                 // kalo dia sudah nyampe lvl 2 dan belum jawab region ini, tombol enable semua
-                if (lastLevel == 2 && flagRegional != true)
+                if (lastLevel == 1 && flagRegional != true)
                 {
                     btnGO.IsEnabled = true;
                     btnA.IsEnabled = true;
@@ -120,7 +120,7 @@ namespace FPMobile
                 }
 
                 // kalo dia sudah nyampe lvl 2 dan belum jawab region ini, tombol enable semua
-                if (lastLevel == 2 && flagRegional != true)
+                if (lastLevel == 1 && flagRegional != true)
                 {
                     btnGO.IsEnabled = true;
                     btnA.IsEnabled = true;
@@ -168,7 +168,7 @@ namespace FPMobile
                 }
 
                 // kalo dia sudah nyampe lvl 2 dan belum jawab region ini, tombol enable semua
-                if (lastLevel == 2 && flagRegional != true)
+                if (lastLevel == 1 && flagRegional != true)
                 {
                     btnGO.IsEnabled = true;
                     btnA.IsEnabled = true;
@@ -360,16 +360,16 @@ namespace FPMobile
             }
         }
 
-        // question 1 - 
+        // question 1 - wrong
         private void btnD_Click(object sender, RoutedEventArgs e)
         {
-
+            WrongAnswer();
         }
 
-        // question 2 -
+        // question 2 - wrong
         private void btn2A_Click(object sender, RoutedEventArgs e)
         {
-
+            WrongAnswer();
         }
 
         // question 2 - true for aceh
@@ -394,6 +394,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionAceh = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -433,6 +434,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionRiau = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -472,6 +474,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionSumut = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -502,6 +505,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionSumsel = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -547,7 +551,7 @@ namespace FPMobile
             var temp4 = from all in db.user
                         where all.Name == name
                         select all.RegionSumsel;
-            foreach (var item in temp3)
+            foreach (var item in temp4)
             {
                 flag4 = item;
             }

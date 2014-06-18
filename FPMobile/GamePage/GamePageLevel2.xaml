@@ -59,10 +59,10 @@
                     <Grid.Background>
                         <ImageBrush x:Name="pivot2" Stretch="Fill" ImageSource=""/>
                     </Grid.Background>
-                    <Button x:Name="btnA" Content="" HorizontalAlignment="Left" Margin="62,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnA_Click"/>
-                    <Button x:Name="btnB" Content="" HorizontalAlignment="Left" Margin="271,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnB_Click"/>
-                    <Button x:Name="btnC" Content="" HorizontalAlignment="Left" Margin="274,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="Button_Click" IsEnabled="False"/>
-                    <Button x:Name="btnD" Content="" HorizontalAlignment="Left" Margin="62,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnD_Click"/>
+                    <Button x:Name="btnA" Content="" HorizontalAlignment="Left" Margin="62,624,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnA_Click"/>
+                    <Button x:Name="btnB" Content="" HorizontalAlignment="Left" Margin="271,680,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnB_Click"/>
+                    <Button x:Name="btnC" Content="" HorizontalAlignment="Left" Margin="274,624,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="Button_Click" IsEnabled="False"/>
+                    <Button x:Name="btnD" Content="" HorizontalAlignment="Left" Margin="62,680,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btnD_Click"/>
                 </Grid>
             </phone:PivotItem>
 
@@ -72,10 +72,10 @@
                     <Grid.Background>
                         <ImageBrush x:Name="pivot3" Stretch="Fill" ImageSource=""/>
                     </Grid.Background>
-                    <Button x:Name="btn2A" Content="" HorizontalAlignment="Left" Margin="62,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2A_Click"/>
-                    <Button x:Name="btn2B" Content="" HorizontalAlignment="Left" Margin="271,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2B_Click"/>
-                    <Button x:Name="btn2C" Content="" HorizontalAlignment="Left" Margin="274,573,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="btn2C_Click" IsEnabled="False"/>
-                    <Button x:Name="btn2D" Content="" HorizontalAlignment="Left" Margin="62,663,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2D_Click"/>
+                    <Button x:Name="btn2A" Content="" HorizontalAlignment="Left" Margin="62,624,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2A_Click"/>
+                    <Button x:Name="btn2B" Content="" HorizontalAlignment="Left" Margin="271,680,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2B_Click"/>
+                    <Button x:Name="btn2C" Content="" HorizontalAlignment="Left" Margin="274,624,0,0" VerticalAlignment="Top" Background="#FFAD1515" Click="btn2C_Click" IsEnabled="False"/>
+                    <Button x:Name="btn2D" Content="" HorizontalAlignment="Left" Margin="62,680,0,0" VerticalAlignment="Top" Background="#FFAD1515" IsEnabled="False" Click="btn2D_Click"/>
                 </Grid>
             </phone:PivotItem>
         </phone:Pivot>

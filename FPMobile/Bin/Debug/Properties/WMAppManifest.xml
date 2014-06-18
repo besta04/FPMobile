@@ -4,7 +4,7 @@
   <Languages xmlns="">
     <Language code="id" />
   </Languages>
-  <App xmlns="" ProductID="{3be55264-fd32-4d8f-ac7e-d4b048a98414}" Title="Merah Putih" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mobile Entertainment" Description="Sample description" Publisher="Averousi's" PublisherID="{c5dbae4b-6920-468d-8b15-317fcc277e6c}">
+  <App xmlns="" ProductID="{3be55264-fd32-4d8f-ac7e-d4b048a98414}" Title="Merah Putih Indonesia" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Mobile Entertainment" Description="Learn about UUD 1945 of Indonesia and answer the trivia quiz" Publisher="Kontrakan Community" PublisherID="{c5dbae4b-6920-468d-8b15-317fcc277e6c}">
     <IconPath IsRelative="true" IsResource="false">logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

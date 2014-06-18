@@ -33,6 +33,16 @@ namespace FPMobile
             ShowSplash();
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+            FeedbackOverlay.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
+        }
+
+        // rate my app
+        void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
+        {
+            if (ApplicationBar != null)
+            {
+                ApplicationBar.IsVisible = (FeedbackOverlay.Visibility != Visibility.Visible);
+            }
         }
 
         // splash screen

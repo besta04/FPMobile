@@ -340,6 +340,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionJateng = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -379,6 +380,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionJatim = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -419,6 +421,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionJakarta = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try

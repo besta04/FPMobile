@@ -7,6 +7,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using FPMobile.Resources;
+using BugSense;
+using BugSense.Core.Model;
 
 namespace FPMobile
 {
@@ -23,8 +25,10 @@ namespace FPMobile
         /// </summary>
         public App()
         {
+            BugSenseHandler.Instance.InitAndStartSession(new ExceptionManager(Current), RootFrame, "24201677");
+
             // Global handler for uncaught exceptions.
-            UnhandledException += Application_UnhandledException;
+            //UnhandledException += Application_UnhandledException;
 
             // Standard XAML initialization
             InitializeComponent();
@@ -92,14 +96,14 @@ namespace FPMobile
         }
 
         // Code to execute on Unhandled Exceptions
-        private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
-        {
-            if (Debugger.IsAttached)
-            {
-                // An unhandled exception has occurred; break into the debugger
-                Debugger.Break();
-            }
-        }
+        //private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
+        //{
+        //    if (Debugger.IsAttached)
+        //    {
+        //        // An unhandled exception has occurred; break into the debugger
+        //        Debugger.Break();
+        //    }
+        //}
 
         #region Phone application initialization
 

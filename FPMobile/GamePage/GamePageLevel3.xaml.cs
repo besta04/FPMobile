@@ -195,7 +195,7 @@ namespace FPMobile
                 BitmapImage bi2 = new BitmapImage(new Uri("/Assets/Images/Level3/sultenggara-soal21.png", UriKind.Relative));
                 pivot2.ImageSource = bi2;
 
-                BitmapImage bi3 = new BitmapImage(new Uri("/Assets/Images/Level3/sultenggara-soal22.png", UriKind.Relative));
+                BitmapImage bi3 = new BitmapImage(new Uri("/Assets/Images/Level3/sultenggara-soal21.png", UriKind.Relative));
                 pivot3.ImageSource = bi3;
 
                 // ganti jawabannya
@@ -374,7 +374,7 @@ namespace FPMobile
             WrongAnswer();
         }
 
-        // question 2 - true for sulteng
+        // question 2 - true for sulteng &sultenggara
         private void btn2B_Click(object sender, RoutedEventArgs e)
         {
             if (regions == "sulteng")
@@ -397,6 +397,39 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionSulteng = true;
+                user.Hint++;
+                //user.LastLevel = 2;
+                user.Score += localScore;
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch
+                {
+
+                }
+            }
+            else if (regions == "sultenggara")
+            {
+                // jawaban bener, skor + 100
+                localScore += 100;
+                var messagePrompt = new MessagePrompt
+                {
+                    Title = "Congratulations",
+                    Message = "You have finished this region and gained " + localScore + " points! Next region is unlocked."
+                };
+                messagePrompt.Completed += messagePrompt_Completed;
+                messagePrompt.Show();
+                btn2A.IsEnabled = false;
+                btn2B.IsEnabled = false;
+                btn2C.IsEnabled = false;
+                btn2D.IsEnabled = false;
+                //btnGO.BorderBrush = null;
+
+                // update skor ke database
+                Users user = db.user.Single(p => p.Name == name);
+                user.RegionSultenggara = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -437,6 +470,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionSulut = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -468,6 +502,7 @@ namespace FPMobile
                 // update skor ke database
                 Users user = db.user.Single(p => p.Name == name);
                 user.RegionSulsel = true;
+                user.Hint++;
                 //user.LastLevel = 2;
                 user.Score += localScore;
                 try
@@ -519,6 +554,10 @@ namespace FPMobile
             var temp4 = from all in db.user
                         where all.Name == name
                         select all.RegionSultenggara;
+            foreach (var item in temp4)
+            {
+                flag4 = item;
+            }
 
             if (flag1 == true && flag2 == true && flag3 == true && flag4 == true)
             {
